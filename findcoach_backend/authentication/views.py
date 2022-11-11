@@ -4,8 +4,8 @@ from rest_framework.response import Response
 # import APIView from rest_framework
 from rest_framework.views import APIView
 
-from authentication.serializers import UserSerializer
-from authentication.models import User
+from authentication.serializers import UserSerializer, PostSerializer
+from authentication.models import User, Post
 
 
 # define the view which will be called by the url
@@ -40,3 +40,7 @@ class UserView(APIView):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+class PostViewSet(viewsets.ModelViewSet):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer

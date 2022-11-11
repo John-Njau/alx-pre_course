@@ -137,3 +137,13 @@ class CoachSchedule(models.Model):
 
     def __str__(self):
         return self.coach.user.username + " " + self.client.user.username + " " + self.date + " " + self.time
+
+
+class Post(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    content = models.TextField(max_length=500, blank=True)
+    image = models.ImageField(upload_to='images/')
+    date_posted = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.user.username + " " + self.content

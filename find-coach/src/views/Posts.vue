@@ -6,8 +6,8 @@
         <div>
             <form @submit.prevent="submit">
               <div>
-                <label for="title">Title:</label>
-                <input type="text" name="title" v-model="form.title">
+                <label for="content">Content:</label>
+                <input type="text" name="content" v-model="form.content">
               </div>
               <div>
                 <textarea name="write_up" v-model="form.write_up" placeholder="Write up..."></textarea>
@@ -19,7 +19,7 @@
           <ul>
             <li v-for="post in Posts" :key="post.id">
               <div id="post-div">
-                <p>{{post.title}}</p>
+                <p>{{post.content}}</p>
                 <p>{{post.write_up}}</p>
                 <p>Written By: {{post.author.username}}</p>
               </div>
@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       form: {
-        title: '',
+        content: '',
         write_up: '',
       }
     };

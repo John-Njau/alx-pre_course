@@ -33,7 +33,7 @@ export default {
             await dispatch('GetPosts')
         },
         async GetPosts({commit}){
-            let response = await axios.get('posts')
+            let response = await axios.get('auth/posts')
             commit('setPosts', response.data)
         }
            ,
